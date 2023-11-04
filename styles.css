@@ -184,6 +184,7 @@ ul#itens-carrinho li {
 }
 
 #observacao {
+    text-align: center;
     width: calc(100% - 20px); /* Estende o campo de uma ponta a outra com uma pequena margem */
     max-width: 600px; /* Define uma largura máxima para o campo */
     margin: 0 auto; /* Centraliza o campo */
