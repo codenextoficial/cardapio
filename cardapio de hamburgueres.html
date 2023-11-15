@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<a href="logo.png" target="_blank">
+    <img class="logo" src="logo.png" alt="Logo" vspace="2" hspace="2" width="240vh" height="240vh">
+</a>    
+
+<button id="verCarrinho">Ver Carrinho</button>
+<script src="script.js"></script>
+<script>
+    document.getElementById('verCarrinho').addEventListener('click', function() {
+        window.location.href = 'carrinho.html';
+    });
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio de Hambúrgueres</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Cardápio de Hambúrgueres</h1>
+
+    <div class="menuu">
+
+    <div class="item-menuu">
+        <img src="hamburguer.png" alt="Descrição da imagem">
+        <h2>Hambúrgueres</h2>
+        <p>R$ 10,00</p>
+        <button onclick="adicionarAoCarrinho('Hambúrguer Clássico', 10)">Adicionar ao Carrinho</button>
+    </div>
+
+        <div class="item-menuu">
+            <img src="hamburguer.png" alt="Descrição da imagem">
+            <h2>Cheeseburguer</h2>
+            <p>R$ 12,00</p>
+            <button onclick="adicionarAoCarrinho('Cheeseburguer', 12)">Adicionar ao Carrinho</button>
+        </div>
+
+    <div class="item-menuu">
+        <img src="hamburguer.png" alt="Descrição da imagem">
+        <h2>Cheeseburguer</h2>
+        <p>R$ 12,00</p>
+        <button onclick="adicionarAoCarrinho('Cheeseburguer', 12)">Adicionar ao Carrinho</button>
+    </div>
+
+<div class="item-menuu">
+    <img src="hamburguer.png" alt="Descrição da imagem">
+    <h2>Cheeseburguer</h2>
+    <p>R$ 12,00</p>
+    <button onclick="adicionarAoCarrinho('Cheeseburguer', 12)">Adicionar ao Carrinho</button>
+</div>
+
+   </div>
+  </body>
+</html>

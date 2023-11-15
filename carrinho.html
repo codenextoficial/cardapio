@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<a href="logo.png" target="_blank">
+    <img src="logo.png" vspace="2" hspace="2" width="240vh" height="240vh">
+</a> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Carrinho de Compras</h1>
+
+    <div class="dados-pedido">
+
+        <input type="text" id="mesa" placeholder="Nº da Mesa" required>
+
+        <input type="text" id="nome" placeholder="Nome" required>
+
+        <input type="text" id="telefone" placeholder="Seu Telefone" required>
+
+        <textarea id="observacao" placeholder="Digite alguma observação Sobre o Pedido" required></textarea>
+
+    </div>
+    
+    <div class="botoes">
+    <button onclick="voltarParaMenu()">Voltar para o Menu</button>
+    <button onclick="enviarPedidoWhatsapp()">Enviar Pedido via WhatsApp</button>
+    </div>
+
+    <ul id="carrinho"></ul>
+    <div id="total-carrinho"></div>
+
+    <script src="script.js"></script>
+    <script>
+        function voltarParaMenu() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,198 +1,233 @@
+img.logo {
+    width: 100%;
+    max-width: 400px; /* ou outra largura desejada */
+    display: block;
+    margin: 20px auto 0;
+}
+
+.menuu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.item-menuu {
+    width: 100%;
+    max-width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    display: inline-block;
+}
+
 body {
+    height: 100vh;
+    width: 100%;
+    background-image: url("backgrund.png");
+    background-position: center center;
+    background-repeat: round;
+    background-position: top center;
+}
+
+body,
+html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+
+
+
+
+h1 {
+    color: #ccc;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-image: url("backgrund.png");
+    background-position: center center;
+    background-repeat: round;
+    background-position: top center;
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-}
-
-nav li {
-    margin-left: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 18px;
-}
-
-.cardapio {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     padding: 20px;
-    background-color: #fff;
 }
 
-.item {
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    max-width: 300px;
+h1 {
     text-align: center;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.item img {
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-.item h2 {
+.menu,
+.menuu {
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    flex-wrap: wrap;
     margin-top: 10px;
-    font-size: 1.5em;
-    color: #333;
 }
 
-.item p {
-    margin: 10px 0;
-    font-size: 1.2em;
-    color: #777;
+.item-menu,
+.item-menuu {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center; /* Centraliza o conteúdo dentro de cada item */
+    margin: 10px; /* Espaçamento entre os itens */
+    flex: 1; /* Faz com que os itens se expandam igualmente */
+    max-width: 300px; /* Define uma largura máxima para evitar que os itens fiquem muito largos */
+    display: inline-block;
 }
 
-.item span {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #333;
-}
-
-.item button {
-    background-color: #333;
-    color: #fff;
+button {
+    background-color: #4CAF50;
+    color: white;
     border: none;
-    padding: 8px 16px;
-    font-size: 1em;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 10px;
-    transition: background-color 0.3s;
 }
 
-.item button:hover {
-    background-color: #555;
+button.ver-carrinho {
+    margin-top: 20px;
 }
 
-.carrinho {
-    top: 50%;
-    left: 50%;
-    margin: 20px auto;
-    text-align: center;
-    transform: translate(-50%, -50%)
-    max-width: 300px;
-    margin: 5px;
-    padding: 2px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+button.ver-carrinho a {
+    color: white;
+    text-decoration: none;
 }
 
-.carrinho h2 {
-    font-size: 1.3em;
-    color: #333;
-    margin-bottom: 5px;
-    text-align: center;
+button:hover {
+    background-color: #45a049;
 }
 
-ul#itens-carrinho {
-    list-style: none;
+#carrinho {
+    list-style-type: none;
     padding: 0;
 }
 
-ul#itens-carrinho li {
-    font-size: 1.2em;
-    color: #777;
-    margin-bottom: 5px;
+#carrinho li {
+    margin: 10px 0;
 }
 
 #total-carrinho {
-    font-size: 0.9em;
+    font-size: 1.2em;
     font-weight: bold;
-    color: #333;
-    text-align: right;
-    margin-top: 10px;
 }
 
-.enviar-pedido {
-    
-    background-color: #038f03; /* Cor de fundo verde escuro */
-    color: #fff; /* Cor do texto branco */
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-}
-
-.enviar-pedido:hover {
-    background-color: #00ff00; /* Mudança de cor no hover */
-}
-
-.dados-cliente {
-    max-width: 600px; /* Ajuste conforme necessário */
-    margin: 20px auto;
-    text-align: center;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between; /* Faz com que os campos se espacem igualmente */
-}
-
-.campo {
-    flex: 1; /* Faz com que cada campo ocupe a mesma largura */
-    margin: 0 10px;
-    text-align: left;
-}
-
-.campo label,
-.campo input {
-    display: block;
-    margin-bottom: 10px;
-    width: 100%;
-}
-
-.campo input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.enviar-pedido {
-    /* Restante do estilo do botão (mantenha como está) */
-}
-
-#observacao {
-    text-align: center;
-    width: calc(100% - 20px); /* Estende o campo de uma ponta a outra com uma pequena margem */
-    max-width: 600px; /* Define uma largura máxima para o campo */
-    margin: 0 auto; /* Centraliza o campo */
-    margin-top: -11px;
+textarea,
+input[type="text"],
+.dados-pedido input,
+.dados-pedido textarea {
+    width: calc(100% - 20px);
+    max-width: 600px;
+    margin: 0 auto;
     display: block;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
     box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.botoes {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.botoes button {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.dados-pedido label,
+.dados-pedido textarea,
+.dados-pedido input {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#nome,
+#telefone,
+#observacao {
+    width: calc(80% - 20px);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+    margin: 10px 0;
+}
+
+ul li button {
+    background-color: #ff5f5f;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* AQUI MEXE NOS CAMPOS MESA, NOME, TELEFONE E OBSERVAÇÃO*/
+
+.dados-pedido {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dados-pedido input,
+.dados-pedido textarea {
+    margin: 1px;
+    padding: 1px;
+    flex: 1;
+    max-width: calc(33.33% - 10px); /* Define a largura máxima de cada campo */
+}
+
+/* MODIFICAÇÃO NOS BOTÕES VOLTAR PARA O MENU E ENVIAR PEDIDO VIA WHATSAPP*/
+
+.botoes {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
 }

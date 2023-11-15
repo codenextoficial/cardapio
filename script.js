@@ -2,40 +2,59 @@ let carrinho = [];
 
 function adicionarAoCarrinho(nome, preco) {
     carrinho.push({ nome, preco });
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
     atualizarCarrinho();
 }
 
 function removerDoCarrinho(index) {
     carrinho.splice(index, 1);
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
     atualizarCarrinho();
 }
 
 function atualizarCarrinho() {
-    const itensCarrinho = document.getElementById('itens-carrinho');
-    const totalCarrinho = document.getElementById('total-carrinho');
+    const carrinhoElemento = document.getElementById('carrinho');
     let total = 0;
 
-    itensCarrinho.innerHTML = '';
+    carrinhoElemento.innerHTML = '';
 
     carrinho.forEach((item, index) => {
         const listItem = document.createElement('li');
         listItem.textContent = `${item.nome} - R$${item.preco.toFixed(2)}`;
-        
+
         const removerButton = document.createElement('button');
         removerButton.textContent = 'Remover';
-        removerButton.onclick = () => removerDoCarrinho(index);
+        removerButton.addEventListener('click', () => {
+            removerDoCarrinho(index);
+        });
 
         listItem.appendChild(removerButton);
-        itensCarrinho.appendChild(listItem);
+        carrinhoElemento.appendChild(listItem);
         total += item.preco;
     });
 
-    totalCarrinho.textContent = `Total: R$${total.toFixed(2)}`;
+    const totalElemento = document.getElementById('total-carrinho');
+    totalElemento.textContent = `Total: R$${total.toFixed(2)}`;
 }
 
-function enviarPedidoWhatsApp() {
-    let numeroMesa = document.getElementById('numero-mesa').value;
-    let nomeCliente = document.getElementById('nome-cliente').value;
+function carregarCarrinhoSalvo() {
+    const carrinhoSalvo = localStorage.getItem('carrinho');
+    if (carrinhoSalvo) {
+        carrinho = JSON.parse(carrinhoSalvo);
+    }
+}
+
+function calcularTotalCarrinho() {
+    let total = 0;
+    carrinho.forEach(item => {
+        total += item.preco;
+    });
+    return total;
+}
+
+function enviarPedidoWhatsapp() {
+    let numeroMesa = document.getElementById('mesa').value;
+    let nomeCliente = document.getElementById('nome').value;
     let numeroTelefone = document.getElementById('telefone').value;
     let observacao = document.getElementById('observacao').value;
 
@@ -53,41 +72,33 @@ function enviarPedidoWhatsApp() {
 
     let numeroWhatsapp = "+5587992437345"; // Substitua pelo seu número de WhatsApp
 
-    // Formata o link para o WhatsApp
     let linkWhatsapp = `https://api.whatsapp.com/send?phone=${numeroWhatsapp}&text=${encodeURIComponent(mensagem)}`;
     
-    // Abre uma nova janela ou aba para enviar a mensagem no WhatsApp
     window.open(linkWhatsapp, '_blank');
 
-    // Limpa os campos após enviar o pedido
     carrinho = [];
+    localStorage.removeItem('carrinho');
     atualizarCarrinho();
-    document.getElementById('numero-mesa').value = "";
-    document.getElementById('nome-cliente').value = "";
+
+    document.getElementById('mesa').value = "";
+    document.getElementById('nome').value = "";
     document.getElementById('telefone').value = "";
     document.getElementById('observacao').value = "";
 }
 
-function calcularTotalCarrinho() {
-    let total = 0;
-    carrinho.forEach(item => {
-        total += item.preco;
-    });
-    return total;
-}
+// Adicionado para atualizar o carrinho ao carregar a página
+document.addEventListener('DOMContentLoaded', function() {
+    carregarCarrinhoSalvo();
+    atualizarCarrinho();
+});
 
-function atualizarNumeroMesa() {
-    numeroMesa = document.getElementById('numero-mesa').value;
-}
+// Event Listeners
+document.getElementById('verCarrinho').addEventListener('click', function() {
+    window.location.href = 'carrinho.html';
+});
 
-function atualizarNomeCliente() {
-    nomeCliente = document.getElementById('nome-cliente').value;
-}
+document.getElementById('enviarPedidoWhatsapp').addEventListener('click', enviarPedidoWhatsapp);
 
-function atualizarNumeroTelefone() {
-    numeroTelefone = document.getElementById('telefone').value;
-}
-
-function atualizarObservacao() {
-    observacao = document.getElementById('observacao').value;
-}
+document.getElementById('voltarMenu').addEventListener('click', function() {
+    window.location.href = 'index.html';
+});
