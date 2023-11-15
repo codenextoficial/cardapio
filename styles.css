@@ -1,6 +1,5 @@
 body {
-    transform: scale(0.8); /* ou outro valor desejado */
-    transform-origin: top;
+    transform: scale(0.5); /* ou outro valor desejado */
 }
 
 
@@ -33,9 +32,6 @@ img.logo {
     display: inline-block;
 }
 
-@media (max-width: 768px) {
-    /* Estilos específicos para telas menores */
-}
 
 body {
     margin-top: 20px;
@@ -46,7 +42,7 @@ body {
     width: 100%;
     background-image: url("backgrund.png");
     background-position: center center;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-position: top center;
     font-family: Arial, sans-serif;
     padding: 20px;
