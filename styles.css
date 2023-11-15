@@ -1,5 +1,5 @@
 body {
-    transform: scale(0.5); /* ou outro valor desejado */
+    transform: scale(0.4); /* ou outro valor desejado */
 }
 
 
@@ -10,14 +10,12 @@ img.logo {
     margin: 20px auto;
 }
 
-.menuu {
+.menu-hamburgueres {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 20px; /* ou outro valor desejado */
 }
-
-/* Restante do seu código... */
 
 
 .item-menuu {
@@ -36,21 +34,12 @@ img.logo {
 body {
     margin-top: 20px;
     box-sizing: border-box;
-    max-width: 1200px;
-    margin: 0 auto;
-    height: 100vh;
-    width: 100%;
     background-image: url("backgrund.png");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-position: top center;
-    font-family: Arial, sans-serif;
-    padding: 20px;
 }
 
 body,
 html {
-    height: 100%;
+    height: 200%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,7 +52,7 @@ h1 {
     color: #ccc;
 }
 
-.menuu {
+.menu-hamburgueres {
     margin-top: 80px;
     position: sticky;
     top: 0;
@@ -71,7 +60,7 @@ h1 {
 }
 
 .menu,
-.menuu {
+.menu-hamburgueres {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
