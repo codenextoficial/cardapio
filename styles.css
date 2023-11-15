@@ -1,21 +1,30 @@
+body {
+    transform: scale(0.8); /* ou outro valor desejado */
+    transform-origin: top;
+}
+
+
 img.logo {
     width: 100%;
-    max-width: 400px; /* ou outra largura desejada */
+    max-width: 400px;
     display: block;
-    margin: 20px auto 0;
+    margin: 20px auto;
 }
 
 .menuu {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: 20px; /* ou outro valor desejado */
 }
+
+/* Restante do seu código... */
+
 
 .item-menuu {
     width: 100%;
     max-width: 300px;
-    background-color: #fff;
+    background-color: rgb(255, 255, 255)f;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
@@ -24,13 +33,23 @@ img.logo {
     display: inline-block;
 }
 
+@media (max-width: 768px) {
+    /* Estilos específicos para telas menores */
+}
+
 body {
+    margin-top: 20px;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
     height: 100vh;
     width: 100%;
     background-image: url("backgrund.png");
     background-position: center center;
-    background-repeat: round;
+    background-repeat: repeat;
     background-position: top center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
 }
 
 body,
@@ -44,34 +63,21 @@ html {
     font-family: Arial, sans-serif;
 }
 
-
-
-
-
 h1 {
     color: #ccc;
 }
 
-body {
-    height: 100vh;
-    width: 100%;
-    background-image: url("backgrund.png");
-    background-position: center center;
-    background-repeat: round;
-    background-position: top center;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-}
-
-h1 {
-    text-align: center;
+.menuu {
+    margin-top: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .menu,
 .menuu {
     display: flex;
-    justify-content: center; /* Centraliza os itens horizontalmente */
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 10px;
 }
@@ -82,10 +88,10 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
-    text-align: center; /* Centraliza o conteúdo dentro de cada item */
-    margin: 10px; /* Espaçamento entre os itens */
-    flex: 1; /* Faz com que os itens se expandam igualmente */
-    max-width: 300px; /* Define uma largura máxima para evitar que os itens fiquem muito largos */
+    text-align: center;
+    margin: 10px;
+    flex: 1;
+    max-width: 300px;
     display: inline-block;
 }
 
@@ -145,17 +151,6 @@ input[type="text"],
     box-sizing: border-box;
 }
 
-body,
-html {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    font-family: Arial, sans-serif;
-}
-
 .botoes {
     margin-top: 10px;
     display: flex;
@@ -209,8 +204,6 @@ ul li button {
     cursor: pointer;
 }
 
-/* AQUI MEXE NOS CAMPOS MESA, NOME, TELEFONE E OBSERVAÇÃO*/
-
 .dados-pedido {
     display: flex;
     flex-wrap: wrap;
@@ -221,10 +214,8 @@ ul li button {
     margin: 1px;
     padding: 1px;
     flex: 1;
-    max-width: calc(33.33% - 10px); /* Define a largura máxima de cada campo */
+    max-width: calc(33.33% - 10px);
 }
-
-/* MODIFICAÇÃO NOS BOTÕES VOLTAR PARA O MENU E ENVIAR PEDIDO VIA WHATSAPP*/
 
 .botoes {
     margin-top: 10px;
